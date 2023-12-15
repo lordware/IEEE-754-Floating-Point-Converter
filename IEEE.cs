@@ -32,11 +32,8 @@ namespace ConsoleApp3
             this.Bin = Convert.ToString(i, 2).PadLeft(32, '0');
         }
 
-        public void validateInput()
-        {
-            if (!float.TryParse(this.EnteredVal, out float _))
-                throw new ArgumentException($"Invalid input: \"{this.EnteredVal}\"");
-        }
+        public void validateInput() =>
+            _ = float.TryParse(EnteredVal, out _) ? true : throw new ArgumentException($"Invalid input: \"{EnteredVal}\"");
 
         public void Calculate()
         {
